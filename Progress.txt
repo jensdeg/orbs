@@ -1,0 +1,22 @@
+==========DONE==========
+added basic files
+added vue
+RGB generators
+multiplier
+buymax
+
+==========TODO==========
+
+
+
+==========IDEAS==========
+number
+    number is generatod by the power types, and is used to unlock new things
+    number is not used for purchasing things
+
+RGB generators
+    6 generators, 3 main generators. 2 of each type
+    each type produces a diffrent type of power (R,G,B)
+
+
+
