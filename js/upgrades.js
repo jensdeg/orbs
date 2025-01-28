@@ -1,8 +1,8 @@
-function buymainupgrade(){
-    if(this.player.mainupgrade.cost > this.player.blue_orbs) return
-    this.player.blue_orbs -= this.player.mainupgrade.cost
-    this.player.mainupgrade.cost *= 1 + (10 + this.player.mainupgrade.bought) *0.25
-    this.player.mainupgrade.bought += 1
-    this.player.mainupgrade.current_multiplier *= this.player.mainupgrade.multiplier
+function buymainupgrade(that){
+    if(that.player.mainupgrade.cost > that.player.blue_orbs) return
+    that.player.blue_orbs -= that.player.mainupgrade.cost
+    that.player.mainupgrade.cost *= 1 + (10 + that.player.mainupgrade.bought) *0.25
+    that.player.mainupgrade.bought += 1
+    that.player.mainupgrade.current_multiplier *= that.player.mainupgrade.multiplier
 }
 

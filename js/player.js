@@ -65,6 +65,11 @@ var b_generator_2 = {
     name: 'Blue multiplier Generator'
 }
 
+function Save(){
+    localStorage.setItem('player', JSON.stringify(player))
+    //console.log(localStorage.getItem('player'))
+}
+
 player.r_generators.push(r_generator_1)
 player.r_generators.push(r_generator_2)
 player.g_generators.push(g_generator_1)

@@ -22,11 +22,11 @@ function gameloop(that){
     that.player.blue_power += ((that.player.b_generators[0].amount * that.player.b_generators[0].mult * that.player.mainupgrade.current_multiplier) * diff) / 100
     that.player.b_generators[0].mult += ((that.player.b_generators[1].amount * that.player.b_generators[1].mult * that.player.mainupgrade.current_multiplier) * diff) / 100
 
-
-
-
     that.player.lastUpdate = Date.now()
+}
 
 
-
+function Save(that){
+    localStorage.setItem('player', JSON.stringify(that.player))
+    console.log(localStorage.getItem('player'))
 }

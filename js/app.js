@@ -6,16 +6,16 @@ const app = Vue.createApp({
     },
     methods:{
       buyredgenerator: function(i){
-        buyredgenerator(i)
+        buyredgenerator(i, this)
       },
       buygreengenerator: function(i, unlock){
-        buygreengenerator(i, unlock)
+        buygreengenerator(i, unlock, this)
       },
       buybluegenerator: function(i, unlock){
-        buybluegenerator(i, unlock)
+        buybluegenerator(i, unlock, this)
       },
       buymainupgrade(){
-        buymainupgrade()
+        buymainupgrade(this)
       },
       format(amount){
         return format(amount)
@@ -28,10 +28,17 @@ const app = Vue.createApp({
       },
       gameloop(){
         gameloop(this)
+      },
+      Save(){
+        Save(this)
       }
     },
     mounted(){
+      if(localStorage.getItem('player')){
+        this.player = JSON.parse(localStorage.getItem('player'));
+      }
       setInterval(this.gameloop, 50)
+      setInterval(this.Save, 1500)
     }
   }).mount('#app')
 
