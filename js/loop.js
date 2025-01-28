@@ -28,5 +28,4 @@ function gameloop(that){
 
 function Save(that){
     localStorage.setItem('player', JSON.stringify(that.player))
-    console.log(localStorage.getItem('player'))
 }
