@@ -13,7 +13,7 @@
     <script src="js/generators.js"></script>
     <script src="js/upgrades.js"></script>
     <script src="js/buymax.js"></script>
-    <title>Number</title>
+    <script src="js/save.js"></script>
 </head>
 <body>
 <div id="app">
@@ -45,26 +45,26 @@
     </div>
     <div class="generator-container">
         <button type="submit" @click="buyredgenerator(0)" :style="{'border-color': player.r_generators[0].cost <= player.red_orbs ? 'green': 'black'}" class="generator red-generator">
-            {{player.r_generators[0].name}} <br/>
+            <b>{{player.r_generators[0].name}}</b> <br/>
             cost: {{format(player.r_generators[0].cost)}}<br/>
             multiplier: {{format(player.r_generators[0].mult)}}x<br/>
-            amount: {{format(player.r_generators[0].amount)}}({{player.r_generators[0].bought % 10}})<br/>
+            amount: {{format(player.r_generators[0].amount)}}({{player.r_generators[0].bought}})<br/>
         </button>
         <button type="submit" @click="buyredgenerator(1)":style="{'border-color': player.r_generators[1].cost <= player.red_orbs ? 'green': 'black'}" class="generator red-generator">
-            {{player.r_generators[1].name}} <br/>
+            <b>{{player.r_generators[1].name}}</b> <br/>
             cost: {{format(player.r_generators[1].cost)}}<br/>
             multiplier: {{format(player.r_generators[1].mult)}}x<br/>
-            amount: {{format(player.r_generators[1].amount)}}({{player.r_generators[1].bought % 10}})<br/>
+            amount: {{format(player.r_generators[1].amount)}}({{player.r_generators[1].bought}})<br/>
         </button>
         
 
 
         <button type="submit" @click="buygreengenerator(0, 1000)":style="{'border-color': player.g_generators[0].cost <= player.green_orbs && 1000 <= player.number ? 'green': 'black'}" class="generator green-generator">
             <div v-if="player.number > 1000" >
-                {{player.g_generators[0].name}} <br/>
+                <b>{{player.g_generators[0].name}}</b> <br/>
                 cost: {{format(player.g_generators[0].cost)}}<br/>
                 multiplier: {{format(player.g_generators[0].mult)}}x<br/>
-                amount: {{format(player.g_generators[0].amount)}}({{player.g_generators[0].bought % 10}})<br/>
+                amount: {{format(player.g_generators[0].amount)}}({{player.g_generators[0].bought}})<br/>
             </div>
             <div v-else>
                 unlocks at 1,000 number
@@ -73,7 +73,7 @@
 
         <button type="submit" @click="buygreengenerator(1, 10000)":style="{'border-color': player.g_generators[1].cost <= player.green_orbs && 10000 <= player.number ? 'green': 'black'}" class="generator green-generator">
             <div v-if="player.number > 10000" >
-                {{player.g_generators[1].name}} <br/>
+                <b>{{player.g_generators[1].name}}</b> <br/>
                 cost: {{format(player.g_generators[1].cost)}}<br/>
                 multiplier: {{format(player.g_generators[1].mult)}}x<br/>
                 amount: {{format(player.g_generators[1].amount)}}({{player.g_generators[1].bought % 10}})<br/>
@@ -86,7 +86,7 @@
         
         <button type="submit" @click="buybluegenerator(0, 100000)" :style="{'border-color': player.b_generators[0].cost <= player.blue_orbs && 100000 <= player.number ? 'green': 'black'}"   class="generator blue-generator">
             <div v-if="player.number > 100000" >
-                {{player.b_generators[0].name}} <br/>
+                <b>{{player.b_generators[0].name}}</b> <br/>
                 cost: {{format(player.b_generators[0].cost)}}<br/>
                 multiplier: {{format(player.b_generators[0].mult)}}x<br/>
                 amount: {{format(player.b_generators[0].amount)}}({{player.b_generators[0].bought % 10}})<br/>
@@ -97,7 +97,7 @@
         </button>
         <button class="generator blue-generator" @click="buybluegenerator(1, 1000000)" :style="{'border-color': player.b_generators[1].cost <= player.blue_orbs && 1000000 <= player.number ? 'green': 'black'}">
             <div v-if="player.number > 1000000">
-                {{player.b_generators[1].name}} <br/>
+                <b>{{player.b_generators[1].name}}</b> <br/>
                 cost: {{format(player.b_generators[1].cost)}}<br/>
                 multiplier: {{format(player.b_generators[1].mult)}}x<br/>
                 amount: {{format(player.b_generators[1].amount)}}({{player.b_generators[1].bought % 10}})<br/>

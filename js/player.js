@@ -25,14 +25,14 @@ var r_generator_1 = {
     mult: 1,
     amount: 0,
     bought: 0,
-    name: 'Red Generator'
+    name: 'Red Orb Generator'
 }
 var r_generator_2 = {
     cost:100,
     mult: 1,
     amount: 0,
     bought: 0,
-    name: "Red Multiplier Generator"
+    name: "'Red Orb Generator' Generator"
 }
 
 var g_generator_1 = {
@@ -40,14 +40,14 @@ var g_generator_1 = {
     mult: 1,
     amount: 0,
     bought: 0,
-    name: 'Green Generator'
+    name: 'Green Orb Generator'
 }
 var g_generator_2 = {
     cost:100,
     mult: 1,
     amount: 0,
     bought: 0,
-    name: 'Green Multiplier Generator'
+    name: "'Green Orb Generator' Generator"
 }
 
 var b_generator_1 = {
@@ -55,14 +55,14 @@ var b_generator_1 = {
     mult: 1,
     amount: 0,
     bought: 0,
-    name: 'Blue Generator'
+    name: 'Blue Orb Generator'
 }
 var b_generator_2 = {
     cost:100,
     mult: 1,
     amount: 0,
     bought: 0,
-    name: 'Blue multiplier Generator'
+    name: "'Blue Orb Generator' Generator"
 }
 
 function Save(){
