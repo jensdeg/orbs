@@ -31,14 +31,15 @@ const app = Vue.createApp({
       },
       Save(){
         Save(this)
+      },
+      Reset(){
+        Reset(this)
       }
     },
     mounted(){
-      if(localStorage.getItem('player')){
-        this.player = JSON.parse(localStorage.getItem('player'));
-      }
+      Load(this)
       setInterval(this.gameloop, 50)
-      setInterval(this.Save, 1500)
+      setInterval(this.Save, 3000)
     }
   }).mount('#app')
 

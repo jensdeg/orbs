@@ -24,8 +24,3 @@ function gameloop(that){
 
     that.player.lastUpdate = Date.now()
 }
-
-
-function Save(that){
-    localStorage.setItem('player', JSON.stringify(that.player))
-}

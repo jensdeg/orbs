@@ -13,16 +13,18 @@
     <script src="js/generators.js"></script>
     <script src="js/upgrades.js"></script>
     <script src="js/buymax.js"></script>
-    <script src="js/save.js"></script>
+    <script src="js/gamedata.js"></script>
 </head>
 <body>
 <div id="app">
+    <button class="reset-button" @click="Reset">Reset</button>
     <div class="number">
         you have <span style="font-size: 50px;">{{format(player.number)}}</span> number
         <!-- you have <span style="font-size: 50px;">{{player.number}}</span> number -->
         <p style="font-size: 10px"> you are gaining  <span style="font-size: 20px;">{{format(((1 * player.red_power * player.green_power * player.blue_power)/ 10000) * player.mainupgrade.current_multiplier)}}</span> number per second</p>
         <p>Multiplier: {{format(player.mainupgrade.current_multiplier)}} </p>
     </div>
+    
     <button class="tickspeed-upgrade generators-container" @click="buymainupgrade()" :style="{'border-color': player.mainupgrade.cost >= player.blue_orbs ? 'black': 'green'}">
         multiply all by {{format(player.mainupgrade.multiplier)}}
         <br>  
@@ -76,7 +78,7 @@
                 <b>{{player.g_generators[1].name}}</b> <br/>
                 cost: {{format(player.g_generators[1].cost)}}<br/>
                 multiplier: {{format(player.g_generators[1].mult)}}x<br/>
-                amount: {{format(player.g_generators[1].amount)}}({{player.g_generators[1].bought % 10}})<br/>
+                amount: {{format(player.g_generators[1].amount)}}({{player.g_generators[1].bought}})<br/>
             </div>
             <div v-else>
                 unlocks at 10,000 number
@@ -89,7 +91,7 @@
                 <b>{{player.b_generators[0].name}}</b> <br/>
                 cost: {{format(player.b_generators[0].cost)}}<br/>
                 multiplier: {{format(player.b_generators[0].mult)}}x<br/>
-                amount: {{format(player.b_generators[0].amount)}}({{player.b_generators[0].bought % 10}})<br/>
+                amount: {{format(player.b_generators[0].amount)}}({{player.b_generators[0].bought}})<br/>
             </div>
             <div v-else>
                 unlocks at 100,000 number
@@ -100,15 +102,13 @@
                 <b>{{player.b_generators[1].name}}</b> <br/>
                 cost: {{format(player.b_generators[1].cost)}}<br/>
                 multiplier: {{format(player.b_generators[1].mult)}}x<br/>
-                amount: {{format(player.b_generators[1].amount)}}({{player.b_generators[1].bought % 10}})<br/>
+                amount: {{format(player.b_generators[1].amount)}}({{player.b_generators[1].bought }})<br/>
             </div>
             <div v-else>
                 unlocks at 1 million number
             </div>
         </div>
     </div>
-
-</div>
 </body>
 <script src="js/app.js"></script>
 <script src="js/breakinfinity.js"></script>
