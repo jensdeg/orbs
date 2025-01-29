@@ -33,7 +33,7 @@ const app = Vue.createApp({
         Save(this)
       },
       Reset(){
-        Reset(this)
+        Reset()
       }
     },
     mounted(){
