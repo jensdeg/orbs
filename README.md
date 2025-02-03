@@ -1,1 +1,1 @@
-https://orbs.jensdeg.nl
+Bad idle game
